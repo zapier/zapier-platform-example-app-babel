@@ -18,8 +18,6 @@ const mochaAsync = (fn) => {
 
 describe('My Test', () => {
 
-  console.log(App);
-
   it('should test the auth', mochaAsync(async () => {
     const bundle = {
       authData: {
