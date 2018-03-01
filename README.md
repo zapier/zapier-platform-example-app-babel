@@ -1,5 +1,7 @@
 # "Babel" Example App For Zapier Platform
 
+[![Build Status](https://travis-ci.org/zapier/zapier-platform-example-app-babel.svg?branch=master)](https://travis-ci.org/zapier/zapier-platform-example-app-babel)
+
 A barebones app that has a resource defined. This is mainly a proof-of-concept for using features not yet available in node v4.x.
 
 Run this:
