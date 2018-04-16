@@ -1,18 +1,11 @@
-import { loadBabel } from './tools';
-loadBabel();
-
-const exampleFunc = async (z, bundle) => {
-  const response = await z.request('http://example.com/api.json');
-  return z.json.parse(response.content);
-};
-
-const Recipe = require('./resources/recipe');
-
-const authentication = require('./authentication');
+import authentication from './authentication';
+import Recipe from './resources/recipe';
+import { version } from '../package.json';
+import { version as platformVersion } from 'zapier-platform-core';
 
 const App = {
-  version: require('../package.json').version,
-  platformVersion: require('zapier-platform-core').version,
+  version,
+  platformVersion,
 
   authentication: authentication,
 
