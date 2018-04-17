@@ -4,7 +4,7 @@ const getRecipe = async (z, bundle) => {
   const response = await z.request({
     url: `${_sharedBaseUrl}/recipes/${bundle.inputData.id}`,
   });
-  return JSON.parse(response.content);
+  return z.JSON.parse(response.content);
 };
 
 const listRecipes = async (z, bundle) => {
@@ -14,7 +14,7 @@ const listRecipes = async (z, bundle) => {
       style: bundle.inputData.style
     }
   });
-  return JSON.parse(response.content);
+  return z.JSON.parse(response.content);
 };
 
 const createRecipe = async (z, bundle) => {
@@ -30,7 +30,7 @@ const createRecipe = async (z, bundle) => {
       'content-type': 'application/json'
     }
   });
-  return JSON.parse(response.content);
+  return z.JSON.parse(response.content);
 };
 
 const searchRecipe = async (z, bundle) => {
@@ -40,7 +40,7 @@ const searchRecipe = async (z, bundle) => {
       nameSearch: bundle.inputData.name
     }
   });
-  const matchingRecipes = JSON.parse(response.content);
+  const matchingRecipes = z.JSON.parse(response.content);
 
   // Only return the first matching recipe
   if (matchingRecipes && matchingRecipes.length) {
@@ -61,7 +61,7 @@ const sample = {
 
 // This file exports a Recipe resource. The definition below contains all of the keys available,
 // and implements the list and create methods.
-const Config = {
+const Recipe = {
   key: 'recipe',
   noun: 'Recipe',
   // The get method is used by Zapier to fetch a complete representation of a record. This is helpful when the HTTP
@@ -151,4 +151,4 @@ const Config = {
   ]
 };
 
-export default Config;
+export default Recipe;

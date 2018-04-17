@@ -1,4 +1,4 @@
-import authentication from './authentication';
+import Authentication from './authentication';
 import Recipe from './resources/recipe';
 import { version } from '../package.json';
 import { version as platformVersion } from 'zapier-platform-core';
@@ -7,7 +7,7 @@ const App = {
   version,
   platformVersion,
 
-  authentication: authentication,
+  authentication: Authentication,
 
   beforeRequest: [
   ],
